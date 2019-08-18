@@ -4,6 +4,7 @@
       "region": "eu-west-1",
       "instance_type": "t2.micro",
       "ssh_username": "ec2-user",
+       "ssh_keypair_name": "mac",
       "source_ami": "ami-0bbc25e23a7640b9b",
       "ami_name": "updated-jenkins-ami {{timestamp}}"
     }],
@@ -16,7 +17,8 @@
                 "sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key",
                 "sudo yum install jenkins -y",
                 "sudo systemctl enable jenkins",
-                "sudo systemctl start jenkins"
+                "sudo systemctl start jenkins",
+                "echo 'ssh-rsa ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDQlVwGw9Miv/iFzsiI8TfmwqsxkfGRfiRzmJI1JiVf+PzUPfcmk/wUrVZGjRsAK/bGCCxlnUhkaGD6laAWPaFUdxkW0tRhw5Kv3jgsHlJWjVYHIxH0N3kEis4ZQcUJD70GgOjRbV/DA8E/xyJPdZ0ElYp8v/zahLZp96p240xLxwukX9W4U9z3xo2mZSVi20quLM2gYIXELTmIeorWo73H85NrS4T95WEvrt+dDdCUTefOJufg9CBdN1KuTMltYbb2vej6gj/rqrG7Q/g7dp0ZtvnfB+T7apXfn/nnHNRrhWoj0OFC0EMVzyXZoEOGZ5mFSCgdBvbfeqPkAowRfBj root@ip-172-31-4-157.us-west-1.compute.internal'"
               ]
            },
            {
