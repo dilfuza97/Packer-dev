@@ -1,4 +1,4 @@
-{{
+{
     "builders": [{
       "type": "amazon-ebs",
       "region": "eu-wast-1",
