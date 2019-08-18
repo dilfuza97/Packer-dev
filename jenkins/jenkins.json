@@ -17,17 +17,16 @@
                 "sudo yum install jenkins -y",
                 "sudo systemctl enable jenkins",
                 "sudo systemctl start jenkins"
-           ]
-       },
-       {
-           "type": "breakpoint",
-           "note": "Something"
-       },
-       {
-           "type": "file",
-           "source": "app.tar.gz",
-           "destination": "/tmp/app.tar.gz"
-     }
-}
-   ]
-}
+              ]
+           },
+           {
+               "type": "breakpoint",
+               "note": "Test Jenkins"
+           },
+           {
+               "type": "file",
+               "source": "test_file",
+               "destination": "/tmp/test_file"
+           }
+       ]
+   }
