@@ -58,24 +58,29 @@ pipeline{
                 }
             }
         }
-        stage("Pull Repo"){
+        stage("Filter AMI"){
             steps{
-                git("https://github.com/dilfuza97/Packer-image.git")
+                def AMI
+                if (REGION == "eu-west-1") {
+                    AMI = "aami-0bbc25e23a7640b9b"
+                } else if (REGION == "eu-central-1"){
+                    AMI = "ami-0cc293023f983ed53"
+                }
             }
         }
         stage("Build Image"){
             steps{
-                sh'packer build -var "region=${REGION}" update/update.json'
-             echo "Hello"
-         }
-     }
- }
- post{
-     success {
-         echo "Done"
-     }
-     failure {
-         mail to:  "ibaidullaeva1997@gmail.com@gmail.com", subject: "job", body: "job completed"
-     }
- }
+                sh 'packer build -var "region=${REGION}" -var "AMI=${AMI}" updated/updated.json'
+                echo "Hello"
+            }
+        }
+    }
+    post{
+        success {
+            echo "Done"
+        }
+        failure {
+            mail to:  "ibaidullaeva1997@gmail.com", subject: "job", body: "job completed"
+        }
+    }
 }
