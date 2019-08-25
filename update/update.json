@@ -4,7 +4,7 @@
       "region": "{{user `region` }}",
       "instance_type": "t2.micro",
       "ssh_username": "ec2-user",
-      "source_ami": "ami-0bbc25e23a7640b9b",
+      "source_ami": "{{user `AMI` }}",
       "ami_name": "updated-ami {{timestamp}}"
     }],
     "provisioners": [{
