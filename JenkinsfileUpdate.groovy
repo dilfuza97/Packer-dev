@@ -70,7 +70,7 @@ pipeline{
         }
         stage("Build Image"){
             steps{
-                sh 'packer build -var "region=${REGION}" -var "AMI=${AMI}" updated/updated.json'
+                sh 'packer build -var "region=${REGION}" -var "AMI=${AMI}" update/update.json'
                 echo "Hello"
             }
         }
