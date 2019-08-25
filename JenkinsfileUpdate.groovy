@@ -65,7 +65,7 @@ pipeline{
         }
         stage("Build Image"){
             steps{
-              //sh "packer build update/update.json"
+                sh'packer build -var "region=${REGION}" update/update.json'
              echo "Hello"
          }
      }
